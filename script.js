@@ -14,10 +14,16 @@ const fetchWeather = () => {
         element.innerHTML = `${weather} | ${tempature}°`
         const sunrise = data.sys.sunrise;
         console.log("sunrise:", sunrise);
-        document.getElementById("sunrise").innerText = sunrise;
+        const sunriseDate = new Date(sunrise * 1000);
+        const sunriseTime = sunriseDate.toLocaleTimeString();
+        console.log("Sunrise:", sunriseTime); 
+        document.getElementById("sunrise").innerText = sunriseTime;
         const sunset = data.sys.sunset;
         console.log("sunset:", sunset);
-        document.getElementById("sunset").innerText = sunset;
+        const sunsetDate = new Date(sunset * 1000);
+        const sunsetTime = sunsetDate.toLocaleTimeString();
+        console.log("Sunset:", sunsetTime);
+        document.getElementById("sunset").innerText = sunsetTime;
       })
      
       .catch((error) => console.error("Error:", error))
