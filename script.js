@@ -39,6 +39,9 @@ const fetchWeather = () => {
         imgElement.style.marginTop = "70px";
         const container = document.getElementById("imgContainer");
         container.appendChild(imgElement);
+
+        document.getElementById("textContainer").innerText = 'Get your sunnies on.'
+        document.getElementById("textContainer2").innerText = 'Stockholm is looking rather great today.'
       })
      
       .catch((error) => console.error("Error:", error))
