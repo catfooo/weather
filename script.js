@@ -32,6 +32,13 @@ const fetchWeather = () => {
         });
         console.log("Sunset:", sunsetTime);
         document.getElementById("sunset").innerText = sunsetTime;
+
+        const imgElement = document.createElement("img");
+        imgElement.src="./icons/noun_Sunglasses_2055147.svg"
+        imgElement.alt = "image for clear weather"
+        imgElement.style.marginTop = "70px";
+        const container = document.getElementById("imgContainer");
+        container.appendChild(imgElement);
       })
      
       .catch((error) => console.error("Error:", error))
