@@ -15,13 +15,21 @@ const fetchWeather = () => {
         const sunrise = data.sys.sunrise;
         console.log("sunrise:", sunrise);
         const sunriseDate = new Date(sunrise * 1000);
-        const sunriseTime = sunriseDate.toLocaleTimeString();
+        const sunriseTime = sunriseDate.toLocaleTimeString(undefined, {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false,
+        });
         console.log("Sunrise:", sunriseTime); 
         document.getElementById("sunrise").innerText = sunriseTime;
         const sunset = data.sys.sunset;
         console.log("sunset:", sunset);
         const sunsetDate = new Date(sunset * 1000);
-        const sunsetTime = sunsetDate.toLocaleTimeString();
+        const sunsetTime = sunsetDate.toLocaleTimeString(undefined, {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false,
+        });
         console.log("Sunset:", sunsetTime);
         document.getElementById("sunset").innerText = sunsetTime;
       })
